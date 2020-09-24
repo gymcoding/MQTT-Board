@@ -96,7 +96,8 @@
                     <q-input color="grey-9" outlined v-model="currentSettings.clientId" label="Client ID" :error="!currentSettings.clientId" hide-bottom-space class="q-mb-xs">
                       <q-btn slot="append" color="grey-9" icon="mdi-refresh" @click="currentSettings.clientId = `mqtt-board-${Math.random().toString(16).substr(2, 8)}`" flat round/>
                     </q-input>
-                    <q-input color="grey-9" outlined v-model="currentSettings.host" label="Host" :error="!currentSettings.host || (secure && currentSettings.host.indexOf('ws:') === 0)" error-message="Host must be not empty and only over secured sockets" hide-bottom-space class="q-mb-xs"/>
+                     <!-- || (secure && currentSettings.host.indexOf('ws:') === 0) -->
+                    <q-input color="grey-9" outlined v-model="currentSettings.host" label="Host" :error="!currentSettings.host" error-message="Host must be not empty and only over secured sockets" hide-bottom-space class="q-mb-xs"/>
                     <q-input color="grey-9" outlined class="q-mb-xs" hide-bottom-space v-model.number="currentSettings.keepalive" type="number" label="Keep alive" :error="!isNil(currentSettings.keepalive) && (currentSettings.keepalive <= 0 || currentSettings.keepalive > 0xffff)"/>
                     <q-select color="grey-9" outlined popup-content-class="mqtt-board__popup" class="q-mb-xs" v-model="currentSettings.protocolVersion" map-options emit-value :options="[{label: '3.1.1', value: 4}, {label: '5.0', value: 5}]" label="Version of MQTT" hide-bottom-space options-selected-class="bg-grey-2 text-grey-9"/>
                     <q-checkbox color="grey-9" class="q-mt-sm q-mb-sm" v-model="currentSettings.clean" :label="currentSettings.protocolVersion === 5 ? 'Clean start' : 'Clean session'"/>
@@ -471,8 +472,8 @@ export default {
   },
   computed: {
     isCurrentSettingsValid () {
-      const settings = this.currentSettings
-      return this.validateSettings(this.currentSettings) && !(!!this.secure && settings.host.indexOf('ws:') === 0)
+      // const settings = this.currentSettings
+      return this.validateSettings(this.currentSettings) //  && !(!!this.secure && settings.host.indexOf('ws:') === 0)
     },
     renderedEntities () {
       const renderedEntities = []

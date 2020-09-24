@@ -4,13 +4,13 @@ const defaultSettings = {
       objectMode: false,
       perMessageDeflate: true
     },
-    host: 'wss://mqtt.flespi.io',
+    host: 'ws://218.156.90.183',
     keepalive: 420,
     protocolVersion: 5,
     resubscribe: false,
     clean: true,
-    username: 'FlespiToken XXXXXXXXXXXXXXXXXXX',
-    password: '',
+    username: 'ral',
+    password: 'ral',
     properties: {
       sessionExpiryInterval: undefined,
       receiveMaximum: undefined,

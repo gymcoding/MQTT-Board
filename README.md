@@ -28,7 +28,7 @@
 
 ``` bash
 # clone the repo
-$ git clone https://github.com/flespi-software/mqtt-board.git mqttboard
+$ git clone https://github.com/gymcoding/mqtt-board.git mqttboard
 
 # go into app's directory and install dependencies
 $ cd mqttboard
@@ -45,7 +45,7 @@ $ quasar build
 You must have a Quasar-based app.
 ```bash
 # install like repo
-$ npm install git+https://github.com/flespi-software/mqtt-board.git
+$ npm install git+https://github.com/gymcoding/mqtt-board.git
 ```
 in quasar.conf.js
 ```js
